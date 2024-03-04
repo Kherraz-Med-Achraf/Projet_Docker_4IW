@@ -17,6 +17,22 @@ docker-compose -f docker-compose-db.yml up --build
 docker-compose -f docker-compose-symfony.yml up --build
 ````
 
+Puis on rentre dans le dossier api/astroSheesh est on fait 
+```bash
+composer install
+````
+
+On se rend sur la racine du projet pour exécuter ces commandes:
+```bash
+docker exec -it projet-docker-4iw3-symfony-1  php bin/console doctrine:migrations:diff
+docker exec -it projet-docker-4iw3-symfony-1  php bin/console doctrine:migrations:migrate
+````
+ > Si cela ne marche pas il faut faire docker ps  pour récupérer le nom de l'image et faire :
+ ```bash
+docker ps
+docker exec -it [nom-image]  php bin/console doctrine:migrations:diff
+docker exec -it [nom-image]  php bin/console doctrine:migrations:migrate
+````
 
 Ces commandes permettent de créer un réseau Docker nécessaire pour que les conteneurs communiquent entre eux, puis de construire et de démarrer les services définis dans les fichiers docker-compose-db.yml et docker-compose-symfony.yml.
 
