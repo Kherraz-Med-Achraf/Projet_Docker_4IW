@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block body %}
+<h1>Todo List</h1>
+
+<ul>
+    {% for todo in todo_lists %}
+        <li>{{ todo.name }} - {% if todo.done %}<span style="color: green;">fait</span>{% else %}<span style="color: red;">pas fait</span>{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+

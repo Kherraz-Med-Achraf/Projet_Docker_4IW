@@ -1,0 +1,3 @@
+todolist_index:
+    path: /todolist
+    controller: App\Controller\TodolistController::index
