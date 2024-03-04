@@ -16,6 +16,7 @@ docker network create symfony-network
 docker-compose -f docker-compose-db.yml up --build
 docker-compose -f docker-compose-symfony.yml up --build
 ````
+Ces commandes permettent de créer un réseau Docker nécessaire pour que les conteneurs communiquent entre eux, puis de construire et de démarrer les services définis dans les fichiers docker-compose-db.yml et docker-compose-symfony.yml.
 
 Puis on rentre dans le dossier api/astroSheesh est on fait 
 ```bash
@@ -33,8 +34,6 @@ docker ps
 docker exec -it [nom-image]  php bin/console doctrine:migrations:diff
 docker exec -it [nom-image]  php bin/console doctrine:migrations:migrate
 ````
-
-Ces commandes permettent de créer un réseau Docker nécessaire pour que les conteneurs communiquent entre eux, puis de construire et de démarrer les services définis dans les fichiers docker-compose-db.yml et docker-compose-symfony.yml.
 
 Images Docker sur Docker Hub
 Les images Docker utilisées dans ce projet sont disponibles sur Docker Hub. Vous pouvez les télécharger en utilisant les commandes suivantes :
