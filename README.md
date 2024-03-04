@@ -27,7 +27,7 @@ On se rend sur la racine du projet pour exécuter ces commandes:
 docker exec -it projet-docker-4iw3-symfony-1  php bin/console doctrine:migrations:diff
 docker exec -it projet-docker-4iw3-symfony-1  php bin/console doctrine:migrations:migrate
 ````
- > Si cela ne marche pas il faut faire docker ps  pour récupérer le nom de l'image et faire :
+ > Si cela ne marche pas il faut récupérer le nom de l'image et faire :
  ```bash
 docker ps
 docker exec -it [nom-image]  php bin/console doctrine:migrations:diff
